@@ -1,0 +1,7 @@
+name: AutoStop
+version: 1.14.2
+main: io.Revenger1.AutoStop.AutoStop
+commands:
+  autostop:
+    description: AutoStop settings
+    usage: /autostop
