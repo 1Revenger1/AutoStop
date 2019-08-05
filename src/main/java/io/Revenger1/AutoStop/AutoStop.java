@@ -11,10 +11,18 @@ import java.util.logging.Level;
 public class AutoStop extends JavaPlugin implements Listener {
 
     private final StopTimer timer = StopTimer.getInstance();
+    private boolean enabled;
 
     @Override
     public void onEnable() {
         getLogger().log(Level.INFO, "onEnable called");
+        if(enabled) {
+            getLogger().log(Level.INFO, "onEnable cancelled");
+            return;
+        }
+
+        enabled = true;
+
         FileConfiguration config = getConfig();
 
         config.addDefault("enabled", false);
